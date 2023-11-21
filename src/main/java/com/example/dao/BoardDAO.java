@@ -71,7 +71,9 @@ public class BoardDAO {
 			
 			System.out.println(vo.getUserid() + "-" + vo.getUname() + "-" + "-" + vo.getSid());
 			stmt.executeUpdate();
+			System.out.println(vo.getUname());
 			return 1;
+
 			
 		} catch (Exception e) {
 			e.printStackTrace();

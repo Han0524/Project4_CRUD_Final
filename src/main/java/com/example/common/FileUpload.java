@@ -36,14 +36,14 @@ public class FileUpload {
 
             one = new BoardVO();
             String sid = multipartRequest.getParameter("id");
-            if(sid != null && sid.equals("")) one.setSid((Integer.parseInt(sid)));
+            if(sid != null && !sid.equals("")) one.setSid((Integer.parseInt(sid)));
             one.setUserid(multipartRequest.getParameter("userid"));
             one.setUname(multipartRequest.getParameter("uname"));
             one.setPassword(multipartRequest.getParameter("password"));
             one.setEmail(multipartRequest.getParameter("email"));
             one.setPhone_num(multipartRequest.getParameter("phone_num"));
 
-            if(sid != null && sid.equals("")){
+            if(sid != null && !sid.equals("")){
                 BoardDAO dao = new BoardDAO();
                 String oldfilename = dao.getPhotoFilename(Integer.parseInt(sid));
                 if(filename!=null && oldfilename!= null)
